@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <clipPath id="c"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>
+    <pattern id="rules" width="824" height="92" patternUnits="userSpaceOnUse" y="100"><rect y="88" width="824" height="4" fill="#cfdbf5"/></pattern>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect x="100" y="100" width="824" height="824" fill="#f5f8ff"/>
+    <rect x="100" y="100" width="824" height="824" fill="url(#rules)"/>
+    <rect x="770" y="100" width="8" height="824" fill="#d3142b" opacity=".5"/>
+  </g>
+  <path d="M265 545c55 55 110 125 160 195 95-200 190-345 335-470" fill="none" stroke="#d3142b" stroke-width="88" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

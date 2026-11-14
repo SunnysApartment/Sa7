@@ -1,0 +1,16 @@
+{
+  "name": { "message": "Sa7 | صح — wrong-keyboard fixer" },
+  "description": { "message": "Fix text typed with the wrong keyboard layout (Arabic ↔ English) and Franco-Arabic, right in the page." },
+  "commandDesc": { "message": "Fix the selected text or the last word" },
+  "menuTitle": { "message": "Fix with Sa7" },
+  "tagline": { "message": "Typed in the wrong layout? Paste it here." },
+  "inputLabel": { "message": "Text to fix" },
+  "inputPlaceholder": { "message": "lvpfh  ·  اثممخ  ·  ezayak" },
+  "outputLabel": { "message": "Fixed text" },
+  "copy": { "message": "Copy" },
+  "copied": { "message": "Copied" },
+  "shortcutHint": { "message": "In any text box: select text (or put the cursor after a word) and press $KEY$, or right-click › Fix with Sa7.", "placeholders": { "key": { "content": "$1" } } },
+  "noShortcut": { "message": "no shortcut set" },
+  "changeShortcut": { "message": "Change shortcut" },
+  "website": { "message": "Website" }
+}

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sa7 | Fix text typed with the wrong keyboard, Arabic and English</title>
+<meta name="description" content="Typed with the wrong keyboard? Select the text, press your shortcut, and Sa7 flips it between Arabic and English. Free for Mac.">
+<link rel="alternate" hreflang="en" href="./">
+<link rel="alternate" hreflang="ar" href="ar/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sa7">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Wrong keyboard? Make it right.">
+<meta property="og:description" content="Select the text, press your shortcut, and Sa7 flips it between Arabic and English. Free for Mac.">
+<meta property="og:image" content="https://sunnysapartment.github.io/Sa7/assets/og-en.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<meta name="theme-color" content="#12291f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sa7","alternateName":"صح","applicationCategory":"UtilitiesApplication","author":{"@type":"Person","name":"Khaled Omar"},"operatingSystem":"macOS 14+","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Fixes text typed with the wrong keyboard layout, between Arabic and English."}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tick" viewBox="0 0 48 48"><path d="M6 26C10 30 15 36 19 41 25 28 33 15 44 6"/></symbol>
+  <symbol id="cross" viewBox="0 0 48 48"><path d="M9 9C18 18 30 30 40 40M40 8C30 18 18 30 8 41"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="Sa7">
+  <a class="logo" href="#top" aria-label="Sa7, back to top"><svg aria-hidden="true"><use href="#tick"/></svg>Sa7</a>
+  <span class="sections">
+    <a href="#try">Try it</a>
+    <a href="#how">How it works</a>
+    <a href="#install">Install</a>
+    <a href="#faq">FAQ</a>
+  </span>
+  <a class="lang" href="ar/" hreflang="ar" lang="ar">العربية</a>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <h1 class="chalk">Wrong keyboard?<br>Make it right.</h1>
+    <p class="lead">Select the text, press <kbd>⌃ K</kbd>, and Sa7 turns it into what you meant, from English to Arabic or back, right inside the app you're using.</p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/SunnysApartment/Sa7/releases/latest/download/Sa7.dmg">Download for Mac</a>
+      <p class="fine">Free and open source. macOS 14 or later.</p>
+    </div>
+    <p class="fine alt">Or <a href="#install">install with one Terminal command</a>, no security warning.</p>
+    <p class="fine phone-only">Sa7 is a Mac app. On your phone? Fix your text in the box further down.</p>
+  </section>
+
+  <div class="stage">
+    <div class="tilt">
+      <div class="frame">
+        <div class="board">
+          <div class="demo" id="demo" aria-live="polite">
+            <p class="demo-bad chalk"><bdi id="bad">lvpfh</bdi></p>
+            <p class="demo-good chalk"><bdi id="good">مرحبا</bdi><svg class="demo-tick" aria-hidden="true"><use href="#tick"/></svg></p>
+          </div>
+        </div>
+      </div>
+      <div class="ledge">
+        <div class="keys" id="keys" aria-hidden="true"></div>
+        <button class="combo" id="press" type="button" aria-label="Press Control K to see another example">
+          <span class="cap cap-wide"><span class="en">⌃</span><span class="ar">control</span></span>
+          <span class="cap"><span class="en">K</span><span class="ar">ن</span></span>
+        </button>
+        <span class="stick" aria-hidden="true"></span>
+      </div>
+    </div>
+    <p class="hint fine">Every key carries two letters. Press <kbd>⌃ K</kbd> on the board for another word.</p>
+  </div>
+
+  <section id="try" class="section">
+    <h2 class="chalk">Fix it here</h2>
+    <p class="intro">Paste the scrambled text and the fix appears right under it.</p>
+    <div class="try glass">
+      <label class="sr" for="input">Text typed with the wrong keyboard</label>
+      <textarea id="input" rows="3" dir="auto" placeholder="Paste here, for example: lvpfh" spellcheck="false"></textarea>
+      <div class="examples">
+        <span>Try:</span>
+        <button class="chip" type="button" data-example="hgsghl ugd;l">hgsghl ugd;l</button>
+        <button class="chip" type="button" data-example="dgh fdkh">dgh fdkh</button>
+        <button class="chip" type="button" data-example="اثممخ صخقمي">اثممخ صخقمي</button>
+        <button class="chip" type="button" data-example="ezayak 3amel eh">ezayak 3amel eh</button>
+      </div>
+      <div class="result">
+        <output id="output" for="input" dir="auto" data-empty="The fix shows up here"></output>
+        <button id="copy" class="btn btn-glass" type="button" disabled>Copy</button>
+      </div>
+      <p class="fine">This box assumes the Arabic PC layout, and turns Franco like 3amel into Arabic. The app reads the keyboards installed on your Mac.</p>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <h2 class="chalk">How it works</h2>
+    <ol class="tiles">
+      <li class="glass">Type as usual, even when the keyboard is in the wrong language.</li>
+      <li class="glass">Select the text. Nothing selected? Sa7 fixes the last word you typed.</li>
+      <li class="glass">Press <kbd>⌃ K</kbd>. Not what you wanted? Press it again right away to undo.</li>
+    </ol>
+  </section>
+
+  <section id="does" class="section">
+    <h2 class="chalk">What it does, and what it doesn't</h2>
+    <div class="groups">
+      <div class="group glass">
+        <h3 class="sub">Fixes</h3>
+        <ul class="marks">
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Works in any app you can type in that supports copy and paste.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Figures out the direction by itself, then switches your keyboard to the right language.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>In mixed text, fixes only the wrong words, using your Mac's dictionary.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Turns Franco into Arabic: <bdi>ezayak 3amel eh</bdi> becomes <bdi lang="ar">ازيك عامل ايه</bdi>.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Knows Arabic, Persian and Urdu keyboards, with English or French AZERTY.</span></li>
+        </ul>
+      </div>
+      <div class="group glass">
+        <h3 class="sub">Stays out of your way</h3>
+        <ul class="marks">
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Shows the fix in a small bubble next to your text, with a soft sound if you like.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Leaves the words on your never-flip list alone, like names and brands.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Turns off in the apps you choose, like games or Terminal, so <kbd>⌃ K</kbd> works there as usual.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Puts back whatever you had copied, and stays out of clipboard-history apps.</span></li>
+        </ul>
+      </div>
+      <div class="group glass">
+        <h3 class="sub">Extras, when you want them</h3>
+        <ul class="marks">
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Fixes copied text with Fix clipboard in the menu, for apps that don't let you select text.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Can point out a word typed in the wrong keyboard as you type, if you turn it on. You press <kbd>⌃ K</kbd> to fix it.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Keeps all its options in one Settings window, in English or Arabic.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Never goes online, unless you turn on the update check.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">Does: </span>Free and open source under the MIT license.</span></li>
+        </ul>
+      </div>
+      <div class="group wide glass">
+        <h3 class="sub">What it doesn't do yet</h3>
+        <ul class="marks">
+          <li class="no"><svg aria-hidden="true"><use href="#cross"/></svg><span><span class="sr">Doesn't: </span>When the dictionary doesn't know a word, like dialect or slang, it flips the whole selection. Select just the wrong part then.</span></li>
+          <li class="no"><svg aria-hidden="true"><use href="#cross"/></svg><span><span class="sr">Doesn't: </span>There's no Windows app yet. On Windows and Chromebooks, <a href="#more">use the Chrome extension</a>.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="section">
+    <h2 class="chalk">Install</h2>
+    <p class="intro">Two ways. The Terminal one skips the warning macOS shows for apps that aren't notarized by Apple yet.</p>
+    <div class="install glass">
+      <h3 class="sub">Fastest: one Terminal command</h3>
+      <p>Open Terminal, paste this and press Return. It puts Sa7 in Applications and opens it.</p>
+      <div class="cmd"><code>curl -fsSL https://sunnysapartment.github.io/Sa7/install.sh | bash</code><button class="btn btn-glass" type="button" data-copy="curl -fsSL https://sunnysapartment.github.io/Sa7/install.sh | bash">Copy</button></div>
+      <p class="fine">Then turn Sa7 on under Accessibility when its window asks. Run the same command any time to update.</p>
+    </div>
+    <div class="install glass">
+      <h3 class="sub">Or use the download</h3>
+      <ol>
+        <li>Open the downloaded Sa7.dmg and drag Sa7 to Applications.</li>
+        <li>Open Sa7 from Applications. macOS says it can't verify the developer.</li>
+        <li>Go to System Settings, then Privacy &amp; Security, scroll down and click Open Anyway.</li>
+        <li>The Sa7 window appears. Click Open Settings and turn Sa7 on under Accessibility. The window updates by itself, no restart needed.</li>
+      </ol>
+      <p class="fine">No Open Anyway button? Run this in Terminal, then open Sa7 again: <code>xattr -cr /Applications/Sa7.app</code></p>
+      <p class="fine">You need an English keyboard (ABC, US or French AZERTY) and an Arabic, Persian or Urdu keyboard. Add them in System Settings, under Keyboard, then Text Input.</p>
+    </div>
+  </section>
+
+  <section id="more" class="section">
+    <h2 class="chalk">More ways to use Sa7</h2>
+    <div class="install glass">
+      <h3 class="sub">In Chrome, on any computer</h3>
+      <p>The Chrome extension does the same fixing in any text box in the browser, on Windows and Chromebooks too. It isn't in the Chrome Web Store yet, so you add it from a zip for now.</p>
+      <ol>
+        <li><div><a href="https://github.com/SunnysApartment/Sa7/releases/latest/download/Sa7-chrome.zip">Download Sa7-chrome.zip</a> and unzip it.</div></li>
+        <li><div>Open this address in Chrome and turn on Developer mode, top right.<div class="cmd"><code>chrome://extensions</code><button class="btn btn-glass" type="button" data-copy="chrome://extensions">Copy</button></div></div></li>
+        <li><div>Click Load unpacked and pick the unzipped folder.</div></li>
+      </ol>
+    </div>
+    <div class="install glass">
+      <h3 class="sub">With Homebrew</h3>
+      <p>Already use Homebrew on your Mac? This installs Sa7, and <code class="inline">brew upgrade</code> keeps it up to date.</p>
+      <div class="cmd"><code>brew install --cask sunnysapartment/sa7/sa7</code><button class="btn btn-glass" type="button" data-copy="brew install --cask sunnysapartment/sa7/sa7">Copy</button></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2 class="chalk">Questions</h2>
+    <div class="faq">
+      <details class="glass">
+        <summary>Is it free?</summary>
+        <p>Yes, and open source under the MIT license. All the code is on <a href="https://github.com/SunnysApartment/Sa7">GitHub</a>.</p>
+      </details>
+      <details class="glass">
+        <summary>Does it send what I type anywhere?</summary>
+        <p>No. Sa7 never connects to the internet, unless you turn on the update check in Settings, and then it only looks for a newer version. The only thing it saves is its own settings, like your shortcut and your never-flip list, on your Mac.</p>
+      </details>
+      <details class="glass">
+        <summary>Why does it need Accessibility permission?</summary>
+        <p>To copy the selected text and paste the fix in its place, the same way you would by hand.</p>
+      </details>
+      <details class="glass">
+        <summary>I installed a new version and the shortcut stopped working.</summary>
+        <p>From version 1.1.1 on, updates keep the permission. Coming from an older version, macOS may show Sa7 as switched on while it no longer applies, and switching it off and on doesn't help. Open the Sa7 setup window from the menu and click Reset permission (version 1.2.1 or later), or run this in Terminal, then turn Sa7 on again when it asks: <code>tccutil reset Accessibility com.khaledomar.sa7</code></p>
+      </details>
+      <details class="glass">
+        <summary>Does the typing hint read everything I type?</summary>
+        <p>No. It's off unless you turn it on, in Settings under Typing. When it's on, Sa7 looks only at the word you're typing right now, in memory, and stores nothing. It never changes your text by itself: it shows a small hint, and you press <kbd>⌃ K</kbd> if you want the fix. macOS may ask you to allow Input Monitoring for it.</p>
+      </details>
+      <details class="glass">
+        <summary>Can I use it in Chrome on Windows?</summary>
+        <p>Yes, with the <a href="#more">Chrome extension</a>. It fixes text in any text box in Chrome, on Windows, Chromebooks and Macs. There's no Windows app yet.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="download" class="section closing">
+    <h2 class="chalk">Stop deleting and retyping.</h2>
+    <div class="cta">
+      <a class="btn" href="https://github.com/SunnysApartment/Sa7/releases/latest/download/Sa7.dmg">Download for Mac</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="More"><a href="https://github.com/SunnysApartment/Sa7">GitHub</a><a href="https://github.com/SunnysApartment/Sa7/blob/main/LICENSE">MIT license</a><a href="ar/" hreflang="ar" lang="ar">العربية</a></nav>
+  <p>© 2026 Sa7. Made by Khaled Omar.</p>
+</footer>
+
+<script src="convert.js"></script>
+<script src="franco.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

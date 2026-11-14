@@ -1,0 +1,16 @@
+{
+  "name": { "message": "صح | Sa7 — مصحّح لغة الكيبورد" },
+  "description": { "message": "يصحّح النص المكتوب بلغة الكيبورد الغلط (عربي ↔ إنجليزي) والفرانكو، جوّه الصفحة نفسها." },
+  "commandDesc": { "message": "صحّح النص المحدد أو آخر كلمة" },
+  "menuTitle": { "message": "صحّح بـ Sa7" },
+  "tagline": { "message": "كتبت باللغة الغلط؟ الصق النص هنا." },
+  "inputLabel": { "message": "النص المطلوب تصحيحه" },
+  "inputPlaceholder": { "message": "lvpfh  ·  اثممخ  ·  ezayak" },
+  "outputLabel": { "message": "النص بعد التصحيح" },
+  "copy": { "message": "نسخ" },
+  "copied": { "message": "اتنسخ" },
+  "shortcutHint": { "message": "في أي خانة كتابة: حدّد النص (أو خلّي المؤشر بعد الكلمة) واضغط $KEY$، أو كليك يمين › صحّح بـ Sa7.", "placeholders": { "key": { "content": "$1" } } },
+  "noShortcut": { "message": "مفيش اختصار" },
+  "changeShortcut": { "message": "غيّر الاختصار" },
+  "website": { "message": "الموقع" }
+}

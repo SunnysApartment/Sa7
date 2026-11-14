@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>صح | Sa7: صلّح الكلام المكتوب بالكيبورد الغلط</title>
+<meta name="description" content="كتبت بالكيبورد الغلط؟ حدّد الكلام واضغط اختصارك، وخلّي Sa7 يقلبه بين العربية والإنجليزية. مجاني للماك.">
+<link rel="alternate" hreflang="en" href="../">
+<link rel="alternate" hreflang="ar" href="./">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sa7">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:title" content="كتبت بالكيبورد الغلط؟ خليها صح.">
+<meta property="og:description" content="حدّد الكلام واضغط اختصارك، وخلّي Sa7 يقلبه بين العربية والإنجليزية. مجاني للماك.">
+<meta property="og:image" content="https://sunnysapartment.github.io/Sa7/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<meta name="theme-color" content="#12291f">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sa7","alternateName":"صح","inLanguage":"ar","applicationCategory":"UtilitiesApplication","author":{"@type":"Person","name":"Khaled Omar"},"operatingSystem":"macOS 14+","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"يصلّح الكلام المكتوب بالكيبورد الغلط بين العربية والإنجليزية."}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tick" viewBox="0 0 48 48"><path d="M6 26C10 30 15 36 19 41 25 28 33 15 44 6"/></symbol>
+  <symbol id="cross" viewBox="0 0 48 48"><path d="M9 9C18 18 30 30 40 40M40 8C30 18 18 30 8 41"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="صح">
+  <a class="logo" href="#top" aria-label="صح، ارجع لأول الصفحة"><svg aria-hidden="true"><use href="#tick"/></svg>صح</a>
+  <span class="sections">
+    <a href="#try">جرّبها</a>
+    <a href="#how">الطريقة</a>
+    <a href="#install">التثبيت</a>
+    <a href="#faq">الأسئلة</a>
+  </span>
+  <a class="lang" href="../" hreflang="en" lang="en">English</a>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <h1 class="chalk">كتبت بالكيبورد الغلط؟<br>خليها صح.</h1>
+    <p class="lead">حدّد الكلام، اضغط <kbd>⌃ K</kbd>، والبرنامج يقلبه للي كنت تقصده، من إنجليزي لعربي أو العكس، في البرنامج اللي انت فيه.</p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/SunnysApartment/Sa7/releases/latest/download/Sa7.dmg">حمّل للماك</a>
+      <p class="fine">مجاني ومفتوح المصدر. ماك 14 أو أحدث.</p>
+    </div>
+    <p class="fine alt">أو <a href="#install">ثبّته بأمر واحد في Terminal</a> من غير تحذيرات.</p>
+    <p class="fine phone-only">البرنامج للماك بس. لو انت على الموبايل، صحّح كلامك من المربع اللي تحت.</p>
+  </section>
+
+  <div class="stage">
+    <div class="tilt">
+      <div class="frame">
+        <div class="board">
+          <div class="demo" id="demo" aria-live="polite">
+            <p class="demo-bad chalk"><bdi id="bad">lvpfh</bdi></p>
+            <p class="demo-good chalk"><bdi id="good">مرحبا</bdi><svg class="demo-tick" aria-hidden="true"><use href="#tick"/></svg></p>
+          </div>
+        </div>
+      </div>
+      <div class="ledge">
+        <div class="keys" id="keys" aria-hidden="true"></div>
+        <button class="combo" id="press" type="button" aria-label="اضغط Control K وشوف مثال تاني">
+          <span class="cap cap-wide"><span class="en">⌃</span><span class="ar">control</span></span>
+          <span class="cap"><span class="en">K</span><span class="ar">ن</span></span>
+        </button>
+        <span class="stick" aria-hidden="true"></span>
+      </div>
+    </div>
+    <p class="hint fine">كل زرار عليه حرفين. اضغط <kbd>⌃ K</kbd> اللي على السبورة وشوف كلمة تانية.</p>
+  </div>
+
+  <section id="try" class="section">
+    <h2 class="chalk">صحّحها هنا</h2>
+    <p class="intro">الصق الكلام الغلط، والصح هيظهر تحته على طول.</p>
+    <div class="try glass">
+      <label class="sr" for="input">الكلام المكتوب غلط</label>
+      <textarea id="input" rows="3" dir="auto" placeholder="الصق هنا، مثلاً: lvpfh" spellcheck="false"></textarea>
+      <div class="examples">
+        <span>جرّب:</span>
+        <button class="chip" type="button" data-example="hgsghl ugd;l">hgsghl ugd;l</button>
+        <button class="chip" type="button" data-example="dgh fdkh">dgh fdkh</button>
+        <button class="chip" type="button" data-example="اثممخ صخقمي">اثممخ صخقمي</button>
+        <button class="chip" type="button" data-example="ezayak 3amel eh">ezayak 3amel eh</button>
+      </div>
+      <div class="result">
+        <output id="output" for="input" dir="auto" data-empty="الصح هيظهر هنا"></output>
+        <button id="copy" class="btn btn-glass" type="button" disabled>انسخ</button>
+      </div>
+      <p class="fine">المربع ده معمول على كيبورد Arabic PC، وبيحوّل الفرانكو زي <bdi>3amel</bdi> لعربي. البرنامج نفسه بيقرا الكيبورد المتثبت عندك.</p>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <h2 class="chalk">بتشتغل إزاي</h2>
+    <ol class="tiles">
+      <li class="glass">اكتب عادي، حتى لو اللغة غلط.</li>
+      <li class="glass">حدّد الكلام. لو محددتش حاجة، هيصلّح آخر كلمة كتبتها.</li>
+      <li class="glass">اضغط <kbd>⌃ K</kbd>. مش ده اللي كنت عايزه؟ اضغطه تاني على طول ويرجع زي ما كان.</li>
+    </ol>
+  </section>
+
+  <section id="does" class="section">
+    <h2 class="chalk">بيعمل إيه، وما بيعملش إيه</h2>
+    <div class="groups">
+      <div class="group glass">
+        <h3 class="sub">بيصلّح</h3>
+        <ul class="marks">
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيشتغل في أي برنامج بتكتب فيه وبيقبل النسخ واللصق.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيعرف الاتجاه لوحده، وبعدها بيحوّل الكيبورد للغة الصح.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>لو حددت كلام فيه اللغتين، بيصلّح الكلمات الغلط بس باستخدام قاموس الماك.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيحوّل الفرانكو لعربي: <bdi lang="en">ezayak 3amel eh</bdi> تبقى ازيك عامل ايه.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيعرف الكيبورد العربي والفارسي والأردو، مع الإنجليزي أو الفرنساوي AZERTY.</span></li>
+        </ul>
+      </div>
+      <div class="group glass">
+        <h3 class="sub">ومش هيضايقك</h3>
+        <ul class="marks">
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيوريك التصليح في فقاعة صغيرة جنب الكلام، ومعاها صوت هادي لو حبيت.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيسيب الكلمات اللي في قايمتك زي ما هي، زي الأسامي والماركات.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيقفل نفسه في البرامج اللي تختارها، زي الألعاب أو Terminal، فـ<kbd>⌃ K</kbd> يشتغل فيها عادي.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيرجّع اللي كنت ناسخه زي ما كان، ومش بيملا سجل الحافظة عندك.</span></li>
+        </ul>
+      </div>
+      <div class="group glass">
+        <h3 class="sub">وحاجات زيادة لما تحتاجها</h3>
+        <ul class="marks">
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>بيصلّح الكلام اللي نسخته من القايمة، للبرامج اللي مبتخليكش تحدد الكلام.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>لو فعّلتها، بينبّهك وانت بتكتب لما كلمة تطلع بالكيبورد الغلط، وانت تضغط <kbd>⌃ K</kbd> تصلّحها.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>كل إعداداته في شاشة إعدادات واحدة، بالعربي أو بالإنجليزي.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>مبيتصلش بالنت خالص، إلا لو فعّلت التشييك على التحديثات.</span></li>
+          <li class="yes"><svg aria-hidden="true"><use href="#tick"/></svg><span><span class="sr">بيعمل: </span>مجاني ومفتوح المصدر برخصة MIT.</span></li>
+        </ul>
+      </div>
+      <div class="group wide glass">
+        <h3 class="sub">ولسه ما بيعملش</h3>
+        <ul class="marks">
+          <li class="no"><svg aria-hidden="true"><use href="#cross"/></svg><span><span class="sr">لسه ما بيعملش: </span>لو القاموس مش عارف الكلمة، زي العامية، بيقلب الكلام المحدد كله. ساعتها حدّد الجزء الغلط بس.</span></li>
+          <li class="no"><svg aria-hidden="true"><use href="#cross"/></svg><span><span class="sr">لسه ما بيعملش: </span>لسه مفيش برنامج لويندوز. على ويندوز والكروم بوك، <a href="#more">استخدم إضافة كروم</a>.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="section">
+    <h2 class="chalk">التثبيت</h2>
+    <p class="intro">فيه طريقتين. طريقة Terminal بتعدّي التحذير اللي الماك بيطلّعه للبرامج اللي لسه مش موقّعة من Apple.</p>
+    <div class="install glass">
+      <h3 class="sub">الأسرع: أمر واحد في Terminal</h3>
+      <p>افتح Terminal، الصق الأمر ده واضغط Return. هيحط البرنامج في Applications ويفتحه.</p>
+      <div class="cmd"><code>curl -fsSL https://sunnysapartment.github.io/Sa7/install.sh | bash</code><button class="btn btn-glass" type="button" data-copy="curl -fsSL https://sunnysapartment.github.io/Sa7/install.sh | bash">انسخ</button></div>
+      <p class="fine">بعدها فعّل Sa7 تحت Accessibility لما شاشته تطلب. وشغّل نفس الأمر في أي وقت علشان تحدّث.</p>
+    </div>
+    <div class="install glass">
+      <h3 class="sub">أو من الملف اللي بتنزّله</h3>
+      <ol>
+        <li>افتح Sa7.dmg اللي نزل، واسحب Sa7 على Applications.</li>
+        <li>افتح Sa7 من Applications. الماك هيقولك إنه مش قادر يتأكد من المطوّر.</li>
+        <li>روح System Settings، وبعدين Privacy &amp; Security، وانزل واضغط Open Anyway.</li>
+        <li>هتظهر شاشة Sa7. اضغط افتح الإعدادات وفعّل Sa7 تحت Accessibility. الشاشة هتتحدّث لوحدها، من غير ما تقفل البرنامج.</li>
+      </ol>
+      <p class="fine">الزرار مش ظاهر؟ شغّل الأمر ده في Terminal، وافتح البرنامج تاني: <code>xattr -cr /Applications/Sa7.app</code></p>
+      <p class="fine">محتاج كيبورد إنجليزي (ABC أو US أو الفرنساوي AZERTY) وكيبورد عربي أو فارسي أو أردو. ضيفهم من System Settings، في Keyboard، تحت Text Input.</p>
+    </div>
+  </section>
+
+  <section id="more" class="section">
+    <h2 class="chalk">طرق تانية تستخدم بيها Sa7</h2>
+    <div class="install glass">
+      <h3 class="sub">في كروم، على أي جهاز</h3>
+      <p>إضافة كروم بتعمل نفس التصليح في أي مربع كتابة في المتصفح، وعلى ويندوز والكروم بوك كمان. لسه مش موجودة على Chrome Web Store، فبتضيفها من ملف zip دلوقتي.</p>
+      <ol>
+        <li><div><a href="https://github.com/SunnysApartment/Sa7/releases/latest/download/Sa7-chrome.zip">نزّل Sa7-chrome.zip</a> وفُكّ الضغط.</div></li>
+        <li><div>افتح العنوان ده في كروم، وشغّل Developer mode اللي فوق.<div class="cmd"><code>chrome://extensions</code><button class="btn btn-glass" type="button" data-copy="chrome://extensions">انسخ</button></div></div></li>
+        <li><div>اضغط Load unpacked واختار الفولدر اللي فكّيته.</div></li>
+      </ol>
+    </div>
+    <div class="install glass">
+      <h3 class="sub">من Homebrew</h3>
+      <p>بتستخدم Homebrew على الماك؟ الأمر ده بيثبّت Sa7، و<code class="inline">brew upgrade</code> بيحدّثه.</p>
+      <div class="cmd"><code>brew install --cask sunnysapartment/sa7/sa7</code><button class="btn btn-glass" type="button" data-copy="brew install --cask sunnysapartment/sa7/sa7">انسخ</button></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2 class="chalk">أسئلة</h2>
+    <div class="faq">
+      <details class="glass">
+        <summary>هل هو مجاني؟</summary>
+        <p>أيوه، ومفتوح المصدر برخصة MIT. والكود كله على <a href="https://github.com/SunnysApartment/Sa7">GitHub</a>.</p>
+      </details>
+      <details class="glass">
+        <summary>هل بيبعت اللي بكتبه لأي مكان؟</summary>
+        <p>لأ. البرنامج مبيتصلش بالنت خالص، إلا لو فعّلت التشييك على التحديثات من الإعدادات، وساعتها بيدوّر على نسخة أحدث بس. اللي بيتحفظ بس هو إعداداته، زي الاختصار وقايمة الكلمات اللي متتقلبش، على جهازك.</p>
+      </details>
+      <details class="glass">
+        <summary>ليه بيطلب صلاحية Accessibility؟</summary>
+        <p>علشان ينسخ الكلام المحدد ويلصق الصح مكانه، زي ما انت بتعمل بإيدك.</p>
+      </details>
+      <details class="glass">
+        <summary>نزّلت نسخة جديدة والاختصار وقف؟</summary>
+        <p>من نسخة 1.1.1 وطالع، التحديثات بتحافظ على الصلاحية. لو جاي من نسخة أقدم، الماك ممكن يبيّن Sa7 متفعّل وهو مش شغّال، وتقفيله وفتحه مش بيحل. افتح شاشة الإعداد من قايمة Sa7 واضغط صفّر الصلاحية (من نسخة 1.2.1)، أو شغّل الأمر ده في Terminal، وبعدين فعّل Sa7 تاني لما يطلب: <code>tccutil reset Accessibility com.khaledomar.sa7</code></p>
+      </details>
+      <details class="glass">
+        <summary>التنبيه وانا بكتب بيقرا كل حاجة بكتبها؟</summary>
+        <p>لأ. هو مقفول إلا لو انت فعّلته من الإعدادات. ولما يبقى شغال، بيبص بس على الكلمة اللي بتكتبها دلوقتي، في الذاكرة، ومبيحفظش أي حاجة. وعمره ما بيغيّر كلامك لوحده: بيطلّع تنبيه صغير، ولو عايز التصليح تضغط <kbd>⌃ K</kbd>. الماك ممكن يطلب منك تسمح بـInput Monitoring علشانه.</p>
+      </details>
+      <details class="glass">
+        <summary>ينفع أستخدمه في كروم على ويندوز؟</summary>
+        <p>أيوه، <a href="#more">بإضافة كروم</a>. بتصلّح الكلام في أي مربع كتابة في كروم، على ويندوز والكروم بوك والماك. لسه مفيش برنامج لويندوز.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="download" class="section closing">
+    <h2 class="chalk">بطّل تمسح وتكتب من الأول.</h2>
+    <div class="cta">
+      <a class="btn" href="https://github.com/SunnysApartment/Sa7/releases/latest/download/Sa7.dmg">حمّل للماك</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="روابط"><a href="https://github.com/SunnysApartment/Sa7">GitHub</a><a href="https://github.com/SunnysApartment/Sa7/blob/main/LICENSE">رخصة MIT</a><a href="../" hreflang="en" lang="en">English</a></nav>
+  <p>© 2026 Sa7. تطوير Khaled Omar.</p>
+</footer>
+
+<script src="../convert.js"></script>
+<script src="../franco.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

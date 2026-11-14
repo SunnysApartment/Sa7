@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header>
+  <img src="icons/icon-48.png" alt="" width="32" height="32">
+  <h1>Sa7 <span lang="ar">صح</span></h1>
+</header>
+<p class="tagline" data-i18n="tagline"></p>
+<div class="board">
+  <label for="in" class="sr" data-i18n="inputLabel"></label>
+  <textarea id="in" rows="3" autofocus spellcheck="false" data-i18n-placeholder="inputPlaceholder"></textarea>
+  <label for="out" class="sr" data-i18n="outputLabel"></label>
+  <output id="out" for="in" dir="auto" aria-live="polite"></output>
+  <button id="copy" type="button" disabled data-i18n="copy"></button>
+</div>
+<p class="hint" id="hint"></p>
+<footer>
+  <a href="#" id="shortcuts" data-i18n="changeShortcut"></a>
+  <a href="https://sunnysapartment.github.io/Sa7/" target="_blank" rel="noopener" data-i18n="website"></a>
+</footer>
+<script src="convert.js"></script>
+<script src="franco.js"></script>
+<script src="fix.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
